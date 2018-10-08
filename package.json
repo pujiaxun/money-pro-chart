@@ -3,21 +3,41 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "npm-run-all --parallel koa-server serve",
+    "koa-server": "babel-node ./server/index.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pujiaxun/money-pro-chart.git"
+  },
+  "keywords": [
+    "money pro",
+    "visualization"
+  ],
+  "author": "pujiaxun <pujiaxun@gmail.com> (www.pujiaxun.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pujiaxun/money-pro-chart/issues"
+  },
   "dependencies": {
+    "koa": "^2.5.3",
+    "koa-router": "^7.4.0",
     "vue": "^2.5.17",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "@vue/cli-plugin-babel": "^3.0.4",
     "@vue/cli-plugin-typescript": "^3.0.4",
     "@vue/cli-service": "^3.0.4",
     "node-sass": "^4.9.0",
+    "npm-run-all": "^4.1.3",
     "sass-loader": "^7.0.1",
     "typescript": "^3.0.0",
     "vue-template-compiler": "^2.5.17"

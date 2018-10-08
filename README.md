@@ -1,5 +1,7 @@
 # money-pro-chart
 
+Visualization for datas exported from Money Pro.
+
 ## Project setup
 ```
 npm install
