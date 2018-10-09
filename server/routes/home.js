@@ -1,4 +1,4 @@
-import Router from "koa-router"
+const Router = require("koa-router")
 const home = new Router();
 
 home.get("/", async ctx => {
@@ -8,4 +8,4 @@ home.get("/", async ctx => {
   ctx.body = html;
 });
 
-export default home;
+module.exports = home;

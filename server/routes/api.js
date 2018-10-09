@@ -1,12 +1,14 @@
-import Router from "koa-router"
+const Router = require("koa-router")
 const api = new Router();
 
 api
   .get("/helloworld", async ctx => {
+    console.log('helloworld');
+
     ctx.body = { data: "hello!" };
   })
   .get("/byeworld", async ctx => {
     ctx.body = { data: "bye!" };
   });
 
-export default api;
+module.exports = api
