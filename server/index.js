@@ -8,5 +8,5 @@ const SERVER_PORT = 3456;
 app.use(router.routes()).use(router.allowedMethods())
 
 app.listen(SERVER_PORT, () => {
-  console.log(`[Money Pro Chart] Server is running on the port ${SERVER_PORT}!`);
+  console.log(`[Money Pro Chart] Koa server is running on the port ${SERVER_PORT}!`);
 });
