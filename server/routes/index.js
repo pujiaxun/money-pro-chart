@@ -1,9 +1,9 @@
-const Router = require("koa-router")
-const home = require('./home')
-const api = require('./api')
+const Router = require("koa-router");
+const home = require("./home");
+const api = require("./api");
 
-const router = new Router()
-router.use('/', home.routes(), home.allowedMethods())
-router.use('/api', api.routes(), api.allowedMethods())
+const router = new Router();
+router.use("/", home.routes(), home.allowedMethods());
+router.use("/api", api.routes(), api.allowedMethods());
 
 module.exports = router;

@@ -1,9 +1,9 @@
-const Router = require("koa-router")
+const Router = require("koa-router");
 const api = new Router();
 
 api
   .get("/helloworld", async ctx => {
-    console.log('helloworld');
+    console.log("helloworld");
 
     ctx.body = { data: "hello!" };
   })
@@ -11,4 +11,4 @@ api
     ctx.body = { data: "bye!" };
   });
 
-module.exports = api
+module.exports = api;
