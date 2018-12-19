@@ -13,8 +13,8 @@ export default {
     };
   },
   created() {
-    this.$api.get("helloworld").then(res => {
-      this.demoResult = res;
+    this.$api.get("enums", { params: { field: "account" } }).then(res => {
+      this.demoResult = res.data;
     });
   }
 };
