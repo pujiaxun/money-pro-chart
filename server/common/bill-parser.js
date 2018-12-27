@@ -2,16 +2,16 @@ const _ = require("lodash");
 const CONST_STRING = require("./constant");
 
 const parseDate = originDate => {
-  // SAMPLE: 2018年1月1日 12:20:20
+  // SAMPLE: "2018年1月1日 12:20:20"
   const re = /^(\d+)年(\d+)月(\d+)日\s*(\d+):(\d+):(\d+)$/;
 
   const formattedDate = originDate.replace(re, "$1-$2-$3 $4:$5:$6");
-  // TODO: 注意时区问题
+  // * 注意时区问题
   return new Date(formattedDate);
 };
 
 const parseAmount = originAmount => {
-  // SAMPLE: ¥2,345.23 OR (¥2,345.23)
+  // SAMPLE: "¥2,345.23" OR "(¥2,345.23)"
   const re = /^(\()?\D?([,\d.]+)\)?$/;
   const result = re.exec(originAmount);
 
