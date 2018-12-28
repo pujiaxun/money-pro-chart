@@ -25,8 +25,8 @@ module.exports = async ctx => {
   const rangeConditions = mapValues(rangeQueries, str => {
     const obj = JSON.parse(str);
     const rangeQ = {};
-    if (obj.max) rangeQ.$lt = obj.max;
-    if (obj.min) rangeQ.$gt = obj.min;
+    if (obj.max) rangeQ.$lte = obj.max;
+    if (obj.min) rangeQ.$gte = obj.min;
     return rangeQ;
   });
 
