@@ -1,7 +1,7 @@
 <template lang="pug">
   .about
     div
-      ve-histogram(:data="chartData")
+      ve-pie(:data="chartData")
     h1 ENUMS
     div {{ agents }}
     h1 BILLS
@@ -20,14 +20,14 @@ export default {
   computed: {
     chartData() {
       return {
-        columns: ["createdAt", ...this.agents],
-        rows: this.bills.map(bill => {
-          return {
-            // TODO merge Dates
-            createdAt: bill.createdAt,
-            [bill.agent]: bill.amount
-          };
-        })
+        columns: ["agent", "amount"],
+        rows: this.bills.reduce((prev, curr) => {
+          if (curr.agent) {
+            const row = prev.find(item => item.agent === curr.agent);
+            row.amount += curr.amount;
+          }
+          return prev;
+        }, this.agents.map(agent => ({ agent, amount: 0 })))
       };
     }
   },
