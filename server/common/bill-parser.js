@@ -61,7 +61,13 @@ const enumParser = (objs, type) => {
 };
 
 const initEnums = bills => {
-  const enumsList = ["account", "category", "subCategory", "transactionType"];
+  const enumsList = [
+    "account",
+    "category",
+    "subCategory",
+    "transactionType",
+    "agent"
+  ];
   return enumsList.map(field => enumParser(bills, field));
 };
 

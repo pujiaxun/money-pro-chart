@@ -19,6 +19,7 @@ npm run lint
 
 ## TODO
 
+* 支持TS
 * 使用vuex管理状态
 * 写一个直观的self-document API
 * 提供上传csv文件的API
