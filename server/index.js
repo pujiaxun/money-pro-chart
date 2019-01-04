@@ -20,14 +20,14 @@ const run = async () => {
   };
   app.use(cors(corsConfig));
 
-  // 初始化nedb
+  // init nedb
   const nedb = await initDB();
   app.use(async (ctx, next) => {
     ctx.nedb = nedb;
     await next();
   });
 
-  // 加载路由中间件
+  // load routes
   app.use(router.routes()).use(router.allowedMethods());
 
   app.listen(SERVER_PORT, () => {

@@ -1,15 +1,27 @@
+const TRANSACTION_TYPES_MAP = {
+  Expense: "expense",
+  Income: "income",
+  "Opening Balance": "init",
+  "Money Transfer": "transfer",
+  "Asset Purchase": "purchase",
+  "Asset Sale": "sale",
+  "Liability Acquisition": "lend",
+  "Discharge of Liability": "repay"
+};
+
 module.exports = {
   ENUM_TABLE_NAME: "enums",
 
   BILL_TABLE_NAME: "bills",
-  CREATED_AT: "日期",
-  AMOUNT: "款额",
-  ACCOUNT: "账户",
-  SUMMARY: "总额",
-  TRANSFER_TO: "转账到",
-  BALANCE: "结余",
-  CATEGORY: "类别",
-  DESC: "说明",
-  TRANSACTION_TYPE: "交易类型",
-  AGENT: "代理人"
+  CREATED_AT: "Date",
+  AMOUNT: "Amount",
+  ACCOUNT: "Account",
+  SUMMARY: "Amount received",
+  TRANSFER_TO: "Account (to)",
+  BALANCE: "Balance",
+  CATEGORY: "Category",
+  DESC: "Description",
+  TRANSACTION_TYPE: "Transaction Type",
+  AGENT: "Agent",
+  TRANSACTION_TYPES_MAP
 };

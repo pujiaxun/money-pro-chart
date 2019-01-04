@@ -20,4 +20,5 @@ yarn-error.log*
 *.sln
 *.sw*
 
-bills.csv
+# seeds data
+server/seeds/*.csv

@@ -6,16 +6,22 @@ const { initDatas } = require("./bill-parser");
 
 module.exports = {
   initDB: async () => {
+    // TODO: support UTF-16
     const objs = await csvTool().fromFile(filename);
 
-    console.log("正在导入CSV数据...");
+    console.log("Importing CSV datas...");
     const startTime = new Date();
     const nedb = new NEDB();
 
     const datas = initDatas(objs);
     await nedb.insert(datas);
 
-    console.log("导入数据成功!", "耗时", (new Date() - startTime) / 1000, "秒");
+    console.log(
+      "Initialize database success!",
+      "Cost",
+      (new Date() - startTime) / 1000,
+      "seconds"
+    );
     return nedb;
   }
 };

@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "npm-run-all --parallel koa-server vue-server",
-    "koa-server": "http_proxy='' https_proxy='' all_proxy='' nodemon --delay 1 --watch server ./server/index.js",
-    "vue-server": "npm run serve",
+    "start": "npm-run-all --parallel koa vue",
+    "koa": "http_proxy='' https_proxy='' all_proxy='' nodemon --delay 1 --watch server ./server/index.js",
+    "vue": "npm run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"

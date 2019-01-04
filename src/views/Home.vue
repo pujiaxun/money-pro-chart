@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <router-link to="/dashboard">Open Your Annual Bills</router-link>
+    <router-link to="/dashboard">Open Your Dashboard</router-link>
   </div>
 </template>
 

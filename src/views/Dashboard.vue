@@ -39,7 +39,7 @@ export default {
     this.$api
       .get("bills", {
         params: {
-          transactionType: "支出"
+          transactionType: "expense"
         }
       })
       .then(res => {
