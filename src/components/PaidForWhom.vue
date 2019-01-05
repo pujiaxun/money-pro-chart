@@ -1,6 +1,11 @@
 <template lang="pug">
 .paid-for-whom
-  ve-histogram(:data="chartData" :settings="settings" theme-name="dark" :title="title" )
+  ve-histogram(
+    :data="chartData"
+    :settings="settings"
+    theme-name="dark"
+    :title="title"
+  )
 </template>
 
 <script>

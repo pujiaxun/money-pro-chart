@@ -1,6 +1,12 @@
 <template lang="pug">
 .weekday-lunch
-  ve-line(:data="chartData" :settings="settings" theme-name="dark"  :mark-line="markLine"  :title="title")
+  ve-line(
+    :data="chartData"
+    :settings="settings"
+    theme-name="dark"
+    :mark-line="markLine"
+    :title="title"
+  )
 </template>
 
 <script>

@@ -4,7 +4,6 @@ const CONST_STRING = require("./constant");
 const parseDate = originDate => {
   // * SAMPLE: "Jun 25, 2018 at 21:50:52"
   const formattedDate = originDate.replace("at", " ");
-  // TODO resolve problem about timezone
   return new Date(formattedDate);
 };
 

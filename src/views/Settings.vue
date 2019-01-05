@@ -5,7 +5,7 @@
 </template>
 
 <script>
-// TODO: let user select cate/subcate and store it in localStorage
+// TODO: let user select cate/subcate and $store it in localStorage
 
 export default {
   name: "Settings"

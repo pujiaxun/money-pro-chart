@@ -2,16 +2,18 @@
   .dashboard
     paid-for-whom.chart
     weekday-lunch.chart
-    router-link(to="/settings") Go to Settings
+    engel-coefficient.chart
+    router-link(to="/settings").link Go to Settings
 </template>
 
 <script>
 import PaidForWhom from "../components/PaidForWhom.vue";
 import WeekdayLunch from "../components/WeekdayLunch.vue";
+import EngelCoefficient from "../components/EngelCoefficient.vue";
 
 export default {
   inject: ["$api"],
-  components: { PaidForWhom, WeekdayLunch }
+  components: { PaidForWhom, WeekdayLunch, EngelCoefficient }
 };
 </script>
 
@@ -25,6 +27,11 @@ export default {
   .chart {
     width: 50%;
     flex-shrink: 0;
+    margin: 100px 0;
+  }
+
+  .link {
+    color: #fff;
   }
 }
 </style>
