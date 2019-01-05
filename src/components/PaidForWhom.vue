@@ -1,6 +1,6 @@
 <template lang="pug">
 .paid-for-whom
-  ve-pie(:data="chartData" :settings="settings" theme-name="dark" :title="title")
+  ve-histogram(:data="chartData" :settings="settings" theme-name="dark" :title="title" )
 </template>
 
 <script>
@@ -12,10 +12,16 @@ export default {
       agents: [],
       bills: [],
       settings: {
-        // roseType: "angle"
+        axisSite: { right: ["count"] },
+        yAxisType: ["KMB", "KMB"],
+        yAxisName: ["Amount", "Count"],
+        labelMap: {
+          amount: "Amount",
+          count: "Count"
+        }
       },
       title: {
-        text: "People You Spent Money For",
+        text: "People I Spent Money For",
         left: "center",
         top: "bottom"
       }
@@ -27,13 +33,14 @@ export default {
         if (curr.agent) {
           const row = prev.find(item => item.agent === curr.agent);
           row.amount += curr.amount;
+          row.count += 1;
         }
         return prev;
-      }, this.agents.map(agent => ({ agent, amount: 0 })));
+      }, this.agents.map(agent => ({ agent, amount: 0, count: 0 })));
     },
     chartData() {
       return {
-        columns: ["agent", "amount"],
+        columns: ["agent", "amount", "count"],
         rows: this.rows
       };
     }

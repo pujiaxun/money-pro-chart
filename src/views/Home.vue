@@ -1,7 +1,8 @@
-<template>
-  <div class="home">
-    <router-link to="/dashboard">Open Your Dashboard</router-link>
-  </div>
+<template lang="pug">
+.home
+  router-link(to="/dashboard") Open Your Dashboard
+  br
+  router-link(to="/settings") Go to Settings
 </template>
 
 <script>

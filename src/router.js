@@ -21,6 +21,12 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () =>
         import(/* webpackChunkName: "dashboard" */ "./views/Dashboard.vue")
+    },
+    {
+      path: "/settings",
+      name: "settings",
+      component: () =>
+        import(/* webpackChunkName: "dashboard" */ "./views/Settings.vue")
     }
   ]
 });
