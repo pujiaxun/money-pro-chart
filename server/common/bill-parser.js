@@ -4,7 +4,7 @@ const CONST_STRING = require("./constant");
 const parseDate = originDate => {
   // * SAMPLE: "Jun 25, 2018 at 21:50:52"
   const formattedDate = originDate.replace("at", " ");
-  // TODO 注意时区问题
+  // TODO resolve problem about timezone
   return new Date(formattedDate);
 };
 
@@ -20,12 +20,12 @@ const parseAmount = originAmount => {
 };
 
 const parseCategory = originCate => {
-  // * SAMPLE: "交通: 高铁火车 交通: 高铁火车 "
+  // * SAMPLE: "Meal: Dinner Meal: Lunch "
   const delimiter = "|DELIMITER|";
   const formatted = originCate.trim().replace(": ", delimiter);
   const cates = formatted.split(" ");
 
-  // TODO 无法识别多笔订单的类别各自金额，所以暂时取第一个
+  // ! Cannot recognize their own prices in the same row from the poor csv file.
   return cates[0].split(delimiter);
 };
 
