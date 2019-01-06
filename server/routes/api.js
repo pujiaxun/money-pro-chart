@@ -1,10 +1,8 @@
 const Router = require("koa-router");
 const api = new Router();
 
-const enumsController = require("../controllers/enums");
-const billsController = require("../controllers/bills");
-
-api.get("/enums", enumsController);
-api.get("/bills", billsController);
+api.get("/enums", require("../controllers/enums"));
+api.get("/bills", require("../controllers/bills"));
+api.get("/categories", require("../controllers/categories"));
 
 module.exports = api;

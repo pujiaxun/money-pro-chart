@@ -72,10 +72,44 @@ const initEnums = bills => {
   return enumsList.map(field => enumParser(bills, field));
 };
 
+const initCate = objs => {
+  const typeCatesMap = {};
+  const delimiter = "|DELIMITER|";
+
+  objs.forEach(obj => {
+    const { category: cate, subCategory: subCate, transactionType } = obj;
+    if (!cate) return;
+    const typeAndCate = [transactionType, cate].join(delimiter);
+
+    if (!typeCatesMap[typeAndCate]) {
+      typeCatesMap[typeAndCate] = {};
+    }
+
+    if (subCate) {
+      typeCatesMap[typeAndCate][subCate] = 1;
+    }
+  });
+
+  return _.map(typeCatesMap, (val, key) => {
+    const [type, category] = key.split(delimiter);
+    return {
+      table: CONST_STRING.CATE_TABLE_NAME,
+      type,
+      category,
+      subCategory: _.map(val, (__, k) => k)
+    };
+  });
+};
+
 const initDatas = objs => {
   const bills = initBills(objs);
   const enums = initEnums(bills);
-  return [].concat(bills).concat(enums);
+  const cates = initCate(bills);
+
+  return []
+    .concat(bills)
+    .concat(enums)
+    .concat(cates);
 };
 
 module.exports = {

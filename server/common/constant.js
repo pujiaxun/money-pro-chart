@@ -11,6 +11,7 @@ const TRANSACTION_TYPES_MAP = {
 
 module.exports = {
   ENUM_TABLE_NAME: "enums",
+  CATE_TABLE_NAME: "categories",
 
   BILL_TABLE_NAME: "bills",
   CREATED_AT: "Date",
