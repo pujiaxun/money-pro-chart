@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import PaidForWhom from "../components/PaidForWhom.vue";
-import WeekdayLunch from "../components/WeekdayLunch.vue";
-import EngelCoefficient from "../components/EngelCoefficient.vue";
+import PaidForWhom from "../components/dashboard/PaidForWhom.vue";
+import WeekdayLunch from "../components/dashboard/WeekdayLunch.vue";
+import EngelCoefficient from "../components/dashboard/EngelCoefficient.vue";
 
 export default {
   inject: ["$api"],
@@ -27,7 +27,7 @@ export default {
   .chart {
     width: 50%;
     flex-shrink: 0;
-    margin: 100px 0;
+    margin: 50px 0;
   }
 
   .link {

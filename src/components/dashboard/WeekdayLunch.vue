@@ -71,6 +71,7 @@ export default {
   created() {
     this.$api
       .get("bills", {
+        // TODO setting
         params: { subCategory: "用餐", transactionType: "expense" }
       })
       .then(res => {
