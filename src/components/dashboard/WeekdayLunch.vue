@@ -61,10 +61,21 @@ export default {
     chartData() {
       return {
         columns: ["createdAt", "amount"],
-        rows: this.weekdayLunchBills.map(bill => ({
-          amount: bill.amount,
-          createdAt: format(new Date(bill.createdAt), "YYYY-MM-DD/HH:mm")
-        }))
+        rows: this.weekdayLunchBills.reduce((prev, curr) => {
+          const currDate = this.formatDate(curr.createdAt);
+          const lastBill = prev[prev.length - 1];
+
+          // Merge bills by their dates
+          if (lastBill && this.formatDate(lastBill.createdAt) === currDate) {
+            lastBill.amount += curr.amount;
+          } else {
+            prev.push({
+              amount: curr.amount,
+              createdAt: currDate
+            });
+          }
+          return prev;
+        }, [])
       };
     }
   },
@@ -77,6 +88,11 @@ export default {
       .then(res => {
         this.bills = res.data.results;
       });
+  },
+  methods: {
+    formatDate(dateString) {
+      return format(new Date(dateString), "YYYY-MM-DD");
+    }
   }
 };
 </script>
