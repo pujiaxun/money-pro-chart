@@ -3,7 +3,7 @@
   el-card
     .card-header(slot="header")
       span {{title}}
-      el-switch(v-model="aaaaaa")
+      el-switch(v-model="enabled")
     div Which category(or sub-category) did you use to record food?
     el-cascader(
       :options="options"
@@ -14,6 +14,8 @@
 </template>
 
 <script>
+import { mapState, mapActions } from "vuex";
+
 export default {
   name: "EngelCoefficientSettings",
   inject: ["$api"],
@@ -21,9 +23,7 @@ export default {
     return {
       title: "Engel's Coefficient",
       categories: [],
-      selectedOptions: null,
-      // TODO $store
-      aaaaaa: false
+      selectedOptions: null
     };
   },
   computed: {
@@ -44,7 +44,18 @@ export default {
           ]
         };
       });
-    }
+    },
+    enabled: {
+      get() {
+        return this.config.enabled;
+      },
+      set(value) {
+        this.updateEnabled(value);
+      }
+    },
+    ...mapState({
+      config: "EngelCoefficient"
+    })
   },
   created() {
     this.$api.get("/categories", { params: { type: "expense" } }).then(res => {
@@ -52,7 +63,8 @@ export default {
     });
   },
   methods: {
-    handleChange() {}
+    handleChange() {},
+    ...mapActions(["updateEnabled"])
   }
 };
 </script>

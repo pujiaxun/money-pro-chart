@@ -34,6 +34,7 @@ export default {
   },
   computed: {
     rows() {
+      // TODO: order
       return this.bills.reduce((prev, curr) => {
         if (curr.agent) {
           const row = prev.find(item => item.agent === curr.agent);
