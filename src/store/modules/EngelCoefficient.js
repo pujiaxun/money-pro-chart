@@ -5,20 +5,20 @@ const state = {
 };
 
 const mutations = {
-  SET_ENABLED(state, value) {
-    state.enabled = value;
+  SET_CONFIG(state, { field, value }) {
+    state[field] = value;
   }
 };
 
 const actions = {
-  async updateEnabled({ commit }, value) {
+  async updateConfig({ commit }, { field, value }) {
     // todo write to localstorage
     await new Promise(res => {
       setTimeout(() => {
         res();
       }, 1000);
     });
-    commit("SET_ENABLED", value);
+    commit("SET_CONFIG", { field, value });
   }
 };
 

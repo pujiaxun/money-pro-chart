@@ -50,7 +50,7 @@ export default {
         return this.config.enabled;
       },
       set(value) {
-        this.updateEnabled(value);
+        this.updateConfig({ field: "enable", value });
       }
     },
     ...mapState({
@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     handleChange() {},
-    ...mapActions(["updateEnabled"])
+    ...mapActions(["updateConfig"])
   }
 };
 </script>
