@@ -23,3 +23,8 @@ Visualization for datas exported from Money Pro.
 ## Known Issues
 
 - **All categories/sub-categories cannot include `:` and ` ` inside** (e.g. `Bus & Subway`). It may cause the wrong parsing results. And I haven't found any ways to avoid this because of the poor csv file.
+
+
+## Attention
+
+Parsing CSV from Money Pro is so boring. Thus I abandoned this project, and created a tool which can migrate datas from Money Pro to MoneyWiz3. See [MoneyPro2Wiz](https://github.com/pujiaxun/money-pro-to-wiz)
