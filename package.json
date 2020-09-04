@@ -45,7 +45,7 @@
     "@vue/cli-plugin-eslint": "^3.2.1",
     "@vue/cli-service": "^3.2.0",
     "@vue/eslint-config-prettier": "^3.0.5",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.13.1",
     "nodemon": "^1.18.9",
     "npm-run-all": "^4.1.5",
     "pug": "^2.0.3",
